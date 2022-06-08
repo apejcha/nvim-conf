@@ -35,9 +35,8 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   --colorscheme
-  use 'folke/tokyonight.nvim'
   use "rafi/awesome-vim-colorschemes"
-  use "catppuccin/nvim"
+  use "sainnhe/sonokai"
   --Airline
   use "vim-airline/vim-airline"
   use "vim-airline/vim-airline-themes"
@@ -65,7 +64,6 @@ return packer.startup(function(use)
         end
       }
   }
-  use 'folke/lsp-colors.nvim'
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
@@ -79,6 +77,5 @@ return packer.startup(function(use)
   --Terminal
   use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
   require("toggleterm").setup()
-  
   end}
 end)
