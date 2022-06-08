@@ -31,4 +31,5 @@ lspconfig.sumneko_lua.setup{
 
 lspconfig.rust_analyzer.setup{}
 lspconfig.tsserver.setup{}
-
+lspconfig.ltex.setup{}
+lspconfig.clangd.setup{}

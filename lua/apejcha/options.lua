@@ -7,7 +7,6 @@ local options = {
   mouse='a',
   expandtab=true,
   hidden=true,
-  wrap=false,
   termguicolors=true,
   scrolloff=8,
   clipboard = "unnamedplus",
