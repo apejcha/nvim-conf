@@ -1,4 +1,3 @@
-
 vim.cmd[[colorscheme sonokai]]
 vim.cmd('highlight LineNr ctermfg=DarkGrey guifg=Yellow')
 vim.cmd('highlight VirtualTextError guifg=#db4b4b')
