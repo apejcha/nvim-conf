@@ -37,6 +37,7 @@ return packer.startup(function(use)
   --colorscheme
   use "rafi/awesome-vim-colorschemes"
   use "sainnhe/sonokai"
+  use "folke/tokyonight.nvim"
   --Airline
   use "vim-airline/vim-airline"
   use "vim-airline/vim-airline-themes"

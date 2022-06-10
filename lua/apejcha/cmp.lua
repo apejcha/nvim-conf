@@ -124,8 +124,8 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "nvim_lsp"},
     { name = "cmp_tabnine"},
+    { name = "nvim_lsp"},
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
