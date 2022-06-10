@@ -36,6 +36,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins 
   use '907th/vim-auto-save'
   use 'lervag/vimtex'
+  use 'mhinz/vim-signify'
   --colorscheme
   use "morhetz/gruvbox"
   --Airline
