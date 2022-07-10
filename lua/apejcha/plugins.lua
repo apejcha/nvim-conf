@@ -79,4 +79,10 @@ return packer.startup(function(use)
   use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
   require("toggleterm").setup()
   end}
+  --Harpoon
+  use {'ThePrimeagen/harpoon'}
+  --Prettier - you need to download formater for your language
+  use {'sbdchd/neoformat'}
+  --Neogit and Diffview
+  use "TimUntersberger/neogit"
 end)

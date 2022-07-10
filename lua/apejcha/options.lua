@@ -1,7 +1,7 @@
 local options = {
   number=true,
-  tabstop=2,
-  shiftwidth=2,
+  tabstop=4,
+  shiftwidth=4,
   relativenumber=true,
   mouse='a',
   expandtab=true,
