@@ -15,7 +15,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
+-- Autocommand that reloads neoivim whenever you save the plugins.lua file
 vim.cmd [[
   augroup packer_user_config
     autocmd!
@@ -36,15 +36,18 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   --colorscheme
   use "rafi/awesome-vim-colorschemes"
-  use "sainnhe/sonokai"
+  use {"catppuccin/nvim", as = "cattpuccin"}
   use "folke/tokyonight.nvim"
-  --Airline
-  use "vim-airline/vim-airline"
-  use "vim-airline/vim-airline-themes"
+  --Lualine
+  use {"nvim-lualine/lualine.nvim",
+      requires = { 'kyazdani42/nvim-web-devicons',opt = true}
+  }
   --Telescope file finder
   use "nvim-telescope/telescope.nvim"
   --Colorized
   use 'norcalli/nvim-colorizer.lua'
+  --TreeView
+  use "kyazdani42/nvim-tree.lua"
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -65,6 +68,8 @@ return packer.startup(function(use)
         end
       }
   }
+  use "Julian/lean.nvim"--Lean lsp
+  use "tjdevries/lsp_extensions.nvim"
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
