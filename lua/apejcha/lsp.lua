@@ -42,6 +42,12 @@ lspconfig.tailwindcss.setup{
   capabilities = capabilities,
 }
 
+lspconfig.ccls.setup{
+on_attach=on_attach,
+capabilities = capabilities,
+}
+
+
 lspconfig.sumneko_lua.setup{
   on_attach =on_attach,
   capabilities = capabilities,
@@ -60,3 +66,18 @@ lspconfig.sumneko_lua.setup{
     }
   }
 }
+
+require('lean').setup{
+  abbreviations = { builtin = true },
+  lsp = { on_attach = on_attach },
+  lsp3 = { on_attach = on_attach },
+  mappings = true,
+}
+
+--inlay hint
+vim.api.nvim_create_autocmd({"BufEnter","BufWinEnter","TabEnter"},{
+    pattern = "*.rs",
+    callback = function()
+        require("lsp_extensions").inlay_hints{}
+    end,
+})
