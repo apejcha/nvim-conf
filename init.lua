@@ -6,5 +6,6 @@ require('apejcha.telescope')
 require('apejcha.cmp')
 require('apejcha.treesitter')
 require('apejcha.terminal')
-require('apejcha.airline')
 require('apejcha.colors')
+require('apejcha.nvim-tree')
+
