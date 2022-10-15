@@ -46,8 +46,6 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
   --Colorized
   use 'norcalli/nvim-colorizer.lua'
-  --TreeView
-  use "kyazdani42/nvim-tree.lua"
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -80,10 +78,6 @@ return packer.startup(function(use)
   }
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
-  --Terminal
-  use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
-  require("toggleterm").setup()
-  end}
   --Harpoon
   use {'ThePrimeagen/harpoon'}
   --Prettier - you need to download formater for your language

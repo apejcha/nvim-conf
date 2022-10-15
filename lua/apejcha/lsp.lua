@@ -24,31 +24,33 @@ local on_attach = function (client,bufnr)
     vim.keymap.set("n","<leader>dp", vim.diagnostic.goto_prev,bufopts )
     vim.keymap.set("n","<leader>ds", vim.diagnostic.open_float,bufopts)
     vim.keymap.set("n","<leader>dl", "<cmd>Telescope diagnostics<cr>",bufopts )
+    vim.keymap.set("n","<leader>ca", vim.lsp.buf.code_action,bufopts )
 end
 
 local lspconfig = require("lspconfig")
-lspconfig.rust_analyzer.setup{
+
+lspconfig['rust_analyzer'].setup{
+  on_attach =on_attach,
+  --capabilities = capabilities,
+}
+
+lspconfig['tsserver'].setup{
   on_attach =on_attach,
   capabilities = capabilities,
 }
 
-lspconfig.tsserver.setup{
+lspconfig['tailwindcss'].setup{
   on_attach =on_attach,
   capabilities = capabilities,
 }
 
-lspconfig.tailwindcss.setup{
-  on_attach =on_attach,
-  capabilities = capabilities,
-}
-
-lspconfig.ccls.setup{
+lspconfig['ccls'].setup{
 on_attach=on_attach,
 capabilities = capabilities,
 }
 
 
-lspconfig.sumneko_lua.setup{
+lspconfig['sumneko_lua'].setup{
   on_attach =on_attach,
   capabilities = capabilities,
   settings = {
@@ -67,17 +69,18 @@ lspconfig.sumneko_lua.setup{
   }
 }
 
-require('lean').setup{
-  abbreviations = { builtin = true },
-  lsp = { on_attach = on_attach },
-  lsp3 = { on_attach = on_attach },
-  mappings = true,
-}
+--require('lean').setup{
+--  abbreviations = { builtin = true },
+--  lsp = { on_attach = on_attach },
+--  lsp3 = { on_attach = on_attach },
+--  mappings = true,
+--}
 
 --inlay hint
-vim.api.nvim_create_autocmd({"BufEnter","BufWinEnter","TabEnter"},{
-    pattern = "*.rs",
-    callback = function()
-        require("lsp_extensions").inlay_hints{}
-    end,
-})
+
+--vim.api.nvim_create_autocmd({"BufEnter","BufWinEnter","TabEnter"},{
+--    pattern = "*.rs",
+--    callback = function()
+--        require("lsp_extensions").inlay_hints{}
+--    end,
+--})

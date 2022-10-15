@@ -5,7 +5,7 @@ require('apejcha.lsp')
 require('apejcha.telescope')
 require('apejcha.cmp')
 require('apejcha.treesitter')
-require('apejcha.terminal')
+--require('apejcha.terminal')
 require('apejcha.colors')
 require('apejcha.nvim-tree')
 

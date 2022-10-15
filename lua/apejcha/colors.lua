@@ -1,6 +1,7 @@
 
 --Colorscheme
 vim.g.catppuccin_flavour = "mocha"
+
 require("catppuccin").setup({
     integrations = {
         native_lsp = {
@@ -14,6 +15,7 @@ require("catppuccin").setup({
         }
     }
 })
+
 vim.cmd [[colorscheme catppuccin]]
 
 vim.cmd('highlight LineNr ctermfg=DarkGrey guifg=Yellow')
