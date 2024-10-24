@@ -5,7 +5,5 @@ require('apejcha.lsp')
 require('apejcha.telescope')
 require('apejcha.cmp')
 require('apejcha.treesitter')
---require('apejcha.terminal')
 require('apejcha.colors')
-require('apejcha.nvim-tree')
-
+vim.g.vimtex_view_general_viewer = 'mupdf.inotify'

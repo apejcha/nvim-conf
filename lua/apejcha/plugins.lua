@@ -62,7 +62,6 @@ return packer.startup(function(use)
         config = function()
             require("nvim-lsp-installer").setup {}
             local lspconfig = require("lspconfig")
-            lspconfig.sumneko_lua.setup {}
         end
       }
   }
@@ -84,4 +83,7 @@ return packer.startup(function(use)
   use {'sbdchd/neoformat'}
   --Neogit and Diffview
   use "TimUntersberger/neogit"
+  --VimText
+  use 'lervag/vimtex'
+  use 'mhinz/vim-signify'
 end)

@@ -15,6 +15,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local on_attach = function (client,bufnr)
+    client.server_capabilities.semanticTokensProvider = nil 
    local bufopts = {noremap = true,silent = true,buffer=bufnr}
     vim.keymap.set("n","K", vim.lsp.buf.hover,bufopts)
     vim.keymap.set("n","gd", vim.lsp.buf.definition,bufopts )
@@ -29,58 +30,12 @@ end
 
 local lspconfig = require("lspconfig")
 
-lspconfig['rust_analyzer'].setup{
-  on_attach =on_attach,
-  --capabilities = capabilities,
-}
-
-lspconfig['tsserver'].setup{
+lspconfig.ccls.setup{
   on_attach =on_attach,
   capabilities = capabilities,
 }
 
-lspconfig['tailwindcss'].setup{
+lspconfig.gopls.setup{
   on_attach =on_attach,
   capabilities = capabilities,
 }
-
-lspconfig['ccls'].setup{
-on_attach=on_attach,
-capabilities = capabilities,
-}
-
-
-lspconfig['sumneko_lua'].setup{
-  on_attach =on_attach,
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      diagnostics = {
-        global = {'vim'},
-      },
-      workspace = {
-				-- Make the server aware of Neovim runtime files
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-				},
-			},
-    }
-  }
-}
-
---require('lean').setup{
---  abbreviations = { builtin = true },
---  lsp = { on_attach = on_attach },
---  lsp3 = { on_attach = on_attach },
---  mappings = true,
---}
-
---inlay hint
-
---vim.api.nvim_create_autocmd({"BufEnter","BufWinEnter","TabEnter"},{
---    pattern = "*.rs",
---    callback = function()
---        require("lsp_extensions").inlay_hints{}
---    end,
---})
